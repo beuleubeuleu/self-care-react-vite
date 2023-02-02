@@ -1,0 +1,13 @@
+.display-window {
+  border-radius: 5px;
+  height : 100px;
+  width: 70%;
+  margin: auto;
+  background : #FFF;
+  color: hotpink;
+
+  display : flex;
+  justify-content: center;
+  align-items: center;
+  font-size : 2rem;
+}

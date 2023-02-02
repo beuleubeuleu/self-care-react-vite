@@ -1,2 +1,0 @@
-const affirmations = []
-const mantras = []

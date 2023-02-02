@@ -1,0 +1,24 @@
+.message-type-form__container {
+  background      : #FFF;
+  color           : #000;
+  width           : 70%;
+  height          : 100px;
+  margin          : auto;
+
+  display         : flex;
+
+  justify-content : center;
+  align-items     : center;
+}
+
+.message-type-form__container form {
+  display               : grid;
+  grid-template-columns : repeat(2, 1fr);
+
+  justify-content       : center;
+  align-items           : center;
+}
+
+#submit-bouton {
+  grid-column: 1/3;
+}
