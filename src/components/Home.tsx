@@ -4,7 +4,7 @@ import { FavButton }            from "./FavButton";
 import { AddMessageFormModal }  from "./AddMessageFormModal";
 import React                    from "react";
 import { Header }               from "./Header";
-import { favorites }            from "../data";
+import { favList }              from "../data";
 
 type HomeProps = {
   title: String
@@ -35,7 +35,7 @@ export const Home = ({
 }: HomeProps) => {
   return (
       <div className="home-container">
-        <Header title={ title } resetMsg={ resetMsg } showAddMessage={ showAddMessage } FavList={ favorites }></Header>
+        <Header title={ title } resetMsg={ resetMsg } showAddMessage={ showAddMessage } FavList={ favList }></Header>
 
         <MessageTypeFormModal displayMessage={ displayMsg }/>
 

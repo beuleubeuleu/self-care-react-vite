@@ -1,18 +1,10 @@
-import React from "react";
+import React       from "react";
 import "./Favorites.css"
+import { favList } from "../data";
+
+
 
 export const Favorites = () => {
-  const storedFavList = localStorage.getItem("favList")
-
-  let favList: any = ["no favorites"];
-  if (storedFavList) {
-    try {
-      favList = JSON.parse(storedFavList).split(",");
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
 
   const getFavItems = (list: string[]): any => {
           return list.map((item: string) => (

@@ -10,4 +10,14 @@ export const mantras: String[] = ["just act like you know",
                                   "j'me lève et j'me bats",
                                   "Le monde tourne"]
 
-export const favorites: String[] = []
+const storedFavList = localStorage.getItem("favList")
+
+export let favList: any = ["no favorites"];
+if ( storedFavList ) {
+  try {
+    favList = JSON.parse(storedFavList);
+  } catch (error) {
+    console.error(error);
+  }
+}
+

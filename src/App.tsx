@@ -2,7 +2,7 @@ import React, { useState, useEffect }          from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css"
 import { Home }                                from "./components/Home";
-import { mantras, affirmations, favorites }    from "./data";
+import { mantras, affirmations, favList }    from "./data";
 import { Favorites }                           from "./components/Favorites";
 
 
@@ -14,7 +14,7 @@ function App() {
   const [displayMessage, setDisplayMessage] = useState<String>(initialDisplayMsg);
   const [showAddMessageForm, setShowAddMessageForm] = useState(false);
   const [showFavButton, setShowFavButton] = useState(false);
-  const [FavList, setFavList] = useState(favorites)
+  const [FavList, setFavList] = useState(favList)
 
   const randomItemFromArray = (array: String[]) => array[Math.floor(Math.random() * array.length)]
   const resetMsg = () => {
@@ -50,7 +50,8 @@ function App() {
   }
 
   useEffect(() => {
-    localStorage.setItem("favList", JSON.stringify(FavList.join()))
+    localStorage.setItem("favList", JSON.stringify(FavList))
+    console.log(localStorage.getItem("favList"))
   }, [FavList]);
 
 
