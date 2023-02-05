@@ -10,4 +10,25 @@
   justify-content: center;
   align-items: center;
   font-size : 2rem;
+
+  position:relative;
+}
+
+.display-window__content {
+  width: 35ch;
+  margin: auto;
+  text-align : center;
+}
+
+.display-window__content::before {
+  content: open-quote;
+}
+
+.display-window__content::after {
+  content: close-quote;
+}
+
+.display-window button {
+  position: absolute;
+  right: 50px;
 }

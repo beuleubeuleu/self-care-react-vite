@@ -9,3 +9,5 @@ export const mantras: String[] = ["just act like you know",
                                   "pourquoi t'as commencé",
                                   "j'me lève et j'me bats",
                                   "Le monde tourne"]
+
+export const favorites: String[] = []

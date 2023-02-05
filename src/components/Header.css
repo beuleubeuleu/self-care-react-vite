@@ -9,7 +9,7 @@
 
 .navbar__title {
   margin-inline : auto;
-  font-size     : 2.2em;
+  font-size     : 3em;
 }
 
 .navbar__links {
@@ -19,7 +19,20 @@
   gap             : 1em;
 }
 
-.navbar__link button {
+.navbar__link {
+  display : flex;
+}
+
+.navbar__link :first-child {
   padding : 1em;
-  width   : 100%
+  width   : 150px;
+  height: 50px;
+  font-weight : 600;
+  color: #333;
+  text-align : center;
+  text-decoration : none;
+  background : #F4F4F4;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
 }
