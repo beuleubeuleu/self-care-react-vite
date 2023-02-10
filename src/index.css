@@ -9,6 +9,7 @@ img {
 }
 
 html {
-  background : pink;
   color: #FFF;
+  background : url("./images/bg.jpeg") no-repeat ;
+  background-size : cover;
 }

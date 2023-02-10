@@ -1,5 +1,6 @@
 .navbar {
-  background      : silver;
+  backdrop-filter : blur(2px);
+  background : rgba(0, 0, 0, 0.1);
   padding         : 1em;
 
   display         : flex;
@@ -15,7 +16,6 @@
 .navbar__links {
   list-style-type : none;
   display         : flex;
-  flex-direction  : column;
   gap             : 1em;
 }
 
@@ -24,15 +24,15 @@
 }
 
 .navbar__link :first-child {
-  padding : 1em;
-  width   : 150px;
-  height: 50px;
-  font-weight : 600;
-  color: #333;
-  text-align : center;
+  padding         : 1em;
+  width           : 150px;
+  height          : 50px;
+  font-weight     : 600;
+  color           : #333;
+  text-align      : center;
   text-decoration : none;
-  background : #F4F4F4;
-  border: 1px solid #000;
-  border-radius: 5px;
-  cursor: pointer;
+  background      : #F4F4F4;
+  border          : 1px solid #000;
+  border-radius   : 5px;
+  cursor          : pointer;
 }
