@@ -1,13 +1,16 @@
 .fav-button {
-  width         : 75px;
-  height        : 75px;
+  position      : absolute;
+  right         : 16px;
+  width         : 45px;
+  height        : 45px;
 
-  font-size     : 2rem;
+  font-size     : 1.2rem;
   padding       : .5em;
   border-radius : 50px;
+  border        : none;
+  transition    : background 0.2s ease;
 }
 
 .fav-button:hover {
   background : pink;
-  border:none;
 }

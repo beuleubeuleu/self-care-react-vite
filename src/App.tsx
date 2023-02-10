@@ -4,6 +4,7 @@ import "./App.css"
 import { Home }                                from "./components/Home";
 import { mantras, affirmations, favList }      from "./data";
 import { Favorites }                           from "./components/Favorites";
+import { Header }                              from "./components/Header";
 
 
 
@@ -60,20 +61,18 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home title={ title } resetMsg={ resetMsg } showAddMessage={ showAddMessage } displayMsg={ displayMsg }
+      element: <Home  displayMsg={ displayMsg }
                      message={ displayMessage } showFavButton={ showFavButton }
                      messageDisplayed={ [displayMessage, initialDisplayMsg] } addToFav={ addToFav }
                      showAddMessageForm={ showAddMessageForm } addMsg={ addMsg } closeAddForm={ closeAddForm }/>
     },
-    {
-      path: "/favorites",
-      element: <Favorites/>
-    }
+    { path: "/favorites", element: <Favorites/> }
   ]);
 
 
   return (
       <div className="main">
+        <Header title={ title } resetMsg={ resetMsg } showAddMessage={ showAddMessage } FavList={ favList }></Header>
 
         <RouterProvider router={ router }/>
       </div>

@@ -13,3 +13,11 @@ html {
   background : url("./images/bg.jpeg") no-repeat ;
   background-size : cover;
 }
+
+body {
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+}
