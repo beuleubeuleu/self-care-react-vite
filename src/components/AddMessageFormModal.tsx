@@ -1,5 +1,7 @@
-import React from "react";
+import React                 from "react";
 import "./AddMessageFormModal.css"
+import OutsideClickHandler   from "react-outside-click-handler";
+import { MessageTypeToggle } from "./MessageTypeToggle";
 
 type AddMessageFormModalProps = {
   showAddMessageFormModal: boolean,
@@ -12,21 +14,16 @@ export const AddMessageFormModal = ({ showAddMessageFormModal, addMsg, closeAddF
 
   return (
       <div className="addMessageForm__container">
-        <form onSubmit={ () => addMsg(event) }>
-          <div className="addForm__inputs">
-            <label htmlFor="add-affirmation">Affirmation</label>
-            <label className="switch">
-              <input type="checkbox" name="citation-type"/>
-              <span className="slider round"></span>
+        <OutsideClickHandler onOutsideClick={()=> closeAddForm()}>
+          <form onSubmit={ () => addMsg(event) }>
+              <MessageTypeToggle/>
+            <label className="userInput">
+              <input type="text" name="new-citation" placeholder={ "personalize your selfcare" }/>
             </label>
-            <label htmlFor="add-mantra">Mantra</label>
-          </div>
-          <label className="userInput">
-            <input type="text" name="new-citation" placeholder={ "personalize your selfcare" }/>
-          </label>
-          <button className="addMessageForm__cancel" onClick={ () => closeAddForm() }>Annuler</button>
-          <input type="submit" value="✨Selfcare🌟" id="submit-addBtn"/>
-        </form>
+            <button className="addMessageForm__cancel" onClick={ () => closeAddForm() }>Annuler</button>
+            <input type="submit" value="✨Selfcare🌟" id="submit-addBtn"/>
+          </form>
+        </OutsideClickHandler>
       </div>
   )
 }

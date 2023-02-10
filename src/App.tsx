@@ -2,7 +2,7 @@ import React, { useState, useEffect }          from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css"
 import { Home }                                from "./components/Home";
-import { mantras, affirmations, favList }    from "./data";
+import { mantras, affirmations, favList }      from "./data";
 import { Favorites }                           from "./components/Favorites";
 
 
@@ -10,7 +10,6 @@ import { Favorites }                           from "./components/Favorites";
 function App() {
   const title = "beuleubeuleu's SelfCare Center";
   const initialDisplayMsg = "Lets get some self-care!"
-  const errorMsg = "Choose your selfcare first";
   const [displayMessage, setDisplayMessage] = useState<String>(initialDisplayMsg);
   const [showAddMessageForm, setShowAddMessageForm] = useState(false);
   const [showFavButton, setShowFavButton] = useState(false);
@@ -37,10 +36,8 @@ function App() {
 
   const displayMsg = (event: any) => {
     event.preventDefault();
-    const affirmationBox = event.target.displayMsgForm[0]
-    const mantraBox = event.target.displayMsgForm[1]
-    affirmationBox.checked? setDisplayMessage(randomItemFromArray(affirmations)):
-    mantraBox.checked? setDisplayMessage(randomItemFromArray(mantras)): setDisplayMessage(errorMsg)
+    const isMantra = event.target[0].checked
+    isMantra? setDisplayMessage(randomItemFromArray(mantras)): setDisplayMessage(randomItemFromArray(affirmations))
   }
 
   const addToFav = (msg: String): void => {
@@ -57,13 +54,14 @@ function App() {
 
 
   useEffect(() => {
-    displayMessage == initialDisplayMsg || displayMessage == errorMsg? setShowFavButton(false): setShowFavButton(true);
+    displayMessage == initialDisplayMsg? setShowFavButton(false): setShowFavButton(true);
   }, [displayMessage]);
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home title={title} resetMsg={resetMsg} showAddMessage={showAddMessage} displayMsg={ displayMsg } message={ displayMessage } showFavButton={ showFavButton }
+      element: <Home title={ title } resetMsg={ resetMsg } showAddMessage={ showAddMessage } displayMsg={ displayMsg }
+                     message={ displayMessage } showFavButton={ showFavButton }
                      messageDisplayed={ [displayMessage, initialDisplayMsg] } addToFav={ addToFav }
                      showAddMessageForm={ showAddMessageForm } addMsg={ addMsg } closeAddForm={ closeAddForm }/>
     },
