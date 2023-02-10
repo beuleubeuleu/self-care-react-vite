@@ -1,7 +1,5 @@
 .display-window {
-  border-radius: 5px;
   height : 100px;
-  width: 70%;
   margin: auto;
   background : #FFF;
   color: hotpink;
@@ -26,9 +24,4 @@
 
 .display-window__content::after {
   content: close-quote;
-}
-
-.display-window button {
-  position: absolute;
-  right: 50px;
 }

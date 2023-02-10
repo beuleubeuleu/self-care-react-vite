@@ -1,16 +1,15 @@
 .favorites {
-  height          : 100vh;
-  padding         : 1rem;
+  height         : 100vh;
+  padding        : 1rem;
 
-  background      : #FFF;
-  color           : pink;
+  background     : #FFF;
+  color          : pink;
 
-  display         : flex;
-  justify-content : center;
-  align-items     : center;
-  flex-direction  : column;
-  width           : 80%;
-  margin          : auto;
+  display        : flex;
+  align-items    : center;
+  flex-direction : column;
+  width          : 80%;
+  margin         : auto;
 }
 
 .favorites__header {
@@ -45,7 +44,8 @@
 
 .favorites__element {
   box-shadow : 0 4px 4px rgba(0, 0, 0, 0.3);
-  width      : 51ch
+  width      : 51ch;
+  padding    : .2em
 }
 
 .favorites__element::before {

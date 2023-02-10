@@ -3,13 +3,9 @@ import { DisplayWindow }        from "./DisplayWindow";
 import { FavButton }            from "./FavButton";
 import { AddMessageFormModal }  from "./AddMessageFormModal";
 import React                    from "react";
-import { Header }               from "./Header";
-import { favList }              from "../data";
+import "./Home.css"
 
 type HomeProps = {
-  title: String
-  resetMsg: () => void
-  showAddMessage: () => void,
   displayMsg: (event: any) => void
   message: String
   showFavButton: boolean
@@ -21,9 +17,6 @@ type HomeProps = {
 }
 
 export const Home = ({
-  title,
-  resetMsg,
-  showAddMessage,
   displayMsg,
   message,
   showFavButton,
@@ -35,15 +28,16 @@ export const Home = ({
 }: HomeProps) => {
   return (
       <div className="home-container">
-        <Header title={ title } resetMsg={ resetMsg } showAddMessage={ showAddMessage } FavList={ favList }></Header>
 
-        <MessageTypeFormModal displayMessage={ displayMsg }/>
+        <div className="homepage-content">
+          <MessageTypeFormModal displayMessage={ displayMsg }/>
 
-        <DisplayWindow content={ message }>
-          <FavButton show={ showFavButton }
-                     messageDisplayed={ messageDisplayed }
-                     addToFav={ addToFav }/>
-        </DisplayWindow>
+          <DisplayWindow content={ message }>
+            <FavButton show={ showFavButton }
+                       messageDisplayed={ messageDisplayed }
+                       addToFav={ addToFav }/>
+          </DisplayWindow>
+        </div>
 
         <AddMessageFormModal showAddMessageFormModal={ showAddMessageForm } addMsg={ addMsg }
                              closeAddForm={ closeAddForm }/>
